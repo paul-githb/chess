@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>README</title>
+	</head>
+	<body style="background-color:powderblue;">
+		<h1>AP Computer Science A (Best) Final Project (Ever)</h1>
+		<hr><hr>
+		<p>
+			<strong>
+				Project Name:
+			</strong>
+			Chess
+		</p>
+		<p>
+			<strong>
+				Team Members:
+			</strong>
+			Eric Wu, Yatin Ravi, Paul Shin
+		</p>
+		<p>
+			<strong>
+				Achievements:
+			</strong>
+			<ol>
+				<li>
+					<strong>
+						Data Structures:
+					</strong>
+					This project demonstrates use of data structures by representing the chess board
+					as a two-dimensional, 8x8 array of tiles containing pieces, as well as using two
+					ArrayLists of Pieces to store all captured pieces.
+				</li>
+				<br>
+				<li>
+					<strong>
+						Inheritance:
+					</strong>
+					This project demonstrates inheritance as the Piece class takes the role of the
+					parent class, with all other piece types deriving from this one class: Pawn,
+					Rook, Knight, Bishop, King, and Queen.
+				</li>
+				<br>
+				<li>
+					<strong>
+						Sorting:
+					</strong>
+					This project demonstrates the use of sorting in the form of insertion sort. This
+					sorting algorithm was put to use in the sorting of the sets of captured pieces,
+					which was defined and maintained in the Player class. The pieces were sorted by
+					their piece value, with the King in the front with a piece value of 0 (useful
+					in determining whether or not a winner was found) and the Knights in front of the
+					Bishops.
+				</li>
+				<br>
+				<li>
+					<strong>
+						Abstraction:
+					</strong>
+					This project demonstrates abstraction through the use of declaring abstract methods
+					inside the Piece class, which had to be defined in each individual derived class.
+					These two methods are:
+					<i>
+						boolean moveIsValid(int, int, Board),
+					</i>
+					which took two integer values and determined whether or not moving the piece to that
+					position on the board was valid (disregarding checks, only for validity), and
+					<i>
+						String getStringValue(),
+					</i>
+					which simply returned the String representation of the piece for use in the text-based
+					game. (This was not entirely needed, but good for "demonstrating complexity.")
+				</li>
+			</ol>
+			<p style="padding-left:25px;">
+				Some notable features of our project include:
+			</p>
+			<ul>
+				<li>
+					<strong>
+						Promotion:
+					</strong>
+					This is a chess rule which states that if a pawn makes it to the other end of the board,
+					then it must be replaced immediately with one of the following: a queen, knight, rook, or
+					bishop. When a pawn satisfies this rule, a popup message appears in which the player who
+					owns the pawn chooses which piece to replace the pawn with via a drop down menu. Play
+					continues as normal with the opposing player's turn, unless there is a checkmate.
+				</li>
+				<br>
+				<li>
+					<strong>
+						Castling:
+					</strong>
+					This is a special move in Chess in which the King advances two squares toward any given
+					rook belonging to the same player, and that rook is placed on the opposite side of the King.
+					This move is valid as long as the following conditions hold:
+					<br><br>
+					<ul>
+						<li>
+							The rook has not been moved.
+						</li>
+						<li>
+							The king has not been moved.
+						</li>
+						<li>
+							There exists no piece in between the king and the rook.
+						</li>
+						<li>
+							The move will not put the king under a check.
+						</li>
+					</ul>
+					<br>
+					The way our game handles this move is by performing it only when the appropriate CastleButton
+					is pressed. There exists four CastleButtons in the frame, and they are only visible when a
+					castle is available (i.e. the above conditions hold). The accessibility of one button does not
+					depend on that of the other buttons.
+				</li>
+				<br>
+				<li>
+					<strong>
+						Light Indicator:
+					</strong>
+					Each player has a little light indicator saying whether or not it's the player's turn. This
+					makes it easy to determine whose turn it is without having to display text on the screen.
+				</li>
+				<br>
+				<li>
+					<strong>
+						Checks:
+					</strong>
+					A rule that's integrated in most special rules or moves in Chess is called the check. If a
+					player is under check, then his or her King piece is currently being threatened. If the
+					player under check does not respond appropriately to counter the check, then the player's
+					move is not valid. I.e. the player <i>must</i> attempt to counter the check in order to
+					have a valid move. Possible methods of countering a check include:
+					<br><br>
+					<ul>
+						<li>
+							Moving the King to a tile which does not put it under check.
+						</li>
+						<li>
+							Capturing the piece which is currently threatening the King.
+						</li>
+						<li>
+							Blocking the check using one of the player's own pieces.
+						</li>
+					</ul>
+					<br>
+					If the player is unable to respond to the check in any way, then the player is under a
+					checkmate. This means that the opposing player has won the game.
+			</ul>
+		</p>
+		<p>
+			<strong>
+				Improvements:
+			</strong>
+			<ul>
+				<li>I think we're done! Just be sure to get familiar with the code and how everything works.</li>
+			</ul>
+		</p>
+		<p style="border-style:solid;border-width:1px;padding:10px">
+			<strong>
+				Note:
+			</strong>
+			To generate JavaDocs, type "cd [filepath to project folder]" into the terminal, then
+			type "javadoc -d [class name]HTML [class name].java". For example, to generate the
+			JavaDocs for Board.java, type "javadoc -d BoardHTML Board.java". Then, type 
+			"[class name]HTML\[class name].html" to view it.
+		</p>
+	</body>
+	<footer style="text-align:center;border-style:groove;border-width:2px;border-radius:6px;background-color:rgb(173,255,47);border-color:rgb(205,133,63)">
+		<p>Readme :D</p>
+	</footer>
+
+</html>
